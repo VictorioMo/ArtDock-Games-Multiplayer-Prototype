@@ -10,9 +10,9 @@ public class NetworkPlayer : NetworkBehaviour
 
         // Spawn players at different positions.
         transform.position = new Vector3(
-            OwnerClientId * 2f,
-            1f,
-            0f
+            Random.Range(-2f, 2f),
+            1.01f,
+            Random.Range(-2f, 2f)
         );
 
         Debug.Log($"Player {OwnerClientId} spawned!");
