@@ -25,7 +25,16 @@ public class NgoNetworkSessionService : INetworkSessionService
             "0.0.0.0"
         );
 
-        return _networkManager.StartHost();
+        bool started = _networkManager.StartHost();
+
+        if (started)
+        {
+            _networkManager.SceneManager.SetClientSynchronizationMode(
+                UnityEngine.SceneManagement.LoadSceneMode.Additive
+            );
+        }
+
+        return started;
     }
 
     public bool Join(string ipAddress, ushort port)

@@ -1,3 +1,4 @@
 Work log:
 Wednesday - 3h
-Thursday - 1h
+Thursday - 4h
+Friday - 1h

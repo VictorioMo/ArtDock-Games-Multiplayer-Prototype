@@ -22,6 +22,8 @@ public class PlayerMovement : NetworkBehaviour
     private float _verticalVelocity;
     private float _cameraPitch;
 
+    private bool _gameplayActive = false;
+
     private void Awake()
     {
         _controller = GetComponent<CharacterController>();
@@ -29,32 +31,24 @@ public class PlayerMovement : NetworkBehaviour
 
     public override void OnNetworkSpawn()
     {
-        // Only the owning player controls this character.
-        _controller.enabled = IsOwner;
+        // Gameplay is not active while in the lobby.
+        _controller.enabled = false;
 
-        // Only the owning player uses this camera.
-        playerCamera.gameObject.SetActive(IsOwner);
+        playerCamera.gameObject.SetActive(false);
 
-        // Hide our own capsule to avoid blocking the camera.
         if (playerRenderer != null)
-            playerRenderer.enabled = !IsOwner;
+            playerRenderer.enabled = !IsOwner || (!_gameplayActive);
 
-        if (!IsOwner)
-            return;
-
-        // Disable the original scene camera.
-        Camera sceneCamera = Camera.main;
-
-        if (sceneCamera != null && sceneCamera != playerCamera)
-            sceneCamera.gameObject.SetActive(false);
-
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        if (IsOwner)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 
     private void Update()
     {
-        if (!IsSpawned || !IsOwner)
+        if (!IsSpawned || !IsOwner || !_gameplayActive)
             return;
 
         HandleCursor();
@@ -142,5 +136,23 @@ public class PlayerMovement : NetworkBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
+    }
+
+    public void ActivateGameplay()
+    {
+        _gameplayActive = true;
+
+        _controller.enabled = IsOwner;
+
+        playerCamera.gameObject.SetActive(IsOwner);
+
+        if (playerRenderer != null)
+            playerRenderer.enabled = !IsOwner;
+
+        if (!IsOwner)
+            return;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }
