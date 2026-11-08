@@ -103,8 +103,9 @@ public sealed class LobbyState : NetworkBehaviour, ILobbyRoster
         Changed?.Invoke();
     }
 
-    private void OnDestroy()
+    public override void OnDestroy()
     {
         _players?.Dispose();
+        base.OnDestroy();
     }
 }

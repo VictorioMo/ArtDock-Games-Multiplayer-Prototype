@@ -155,4 +155,18 @@ public class PlayerMovement : NetworkBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
+
+    public override void OnNetworkDespawn()
+    {
+        _gameplayActive = false;
+
+        _controller.enabled = false;
+        playerCamera.gameObject.SetActive(false);
+
+        if (IsOwner)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+    }
 }

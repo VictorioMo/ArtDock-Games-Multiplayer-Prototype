@@ -5,9 +5,6 @@ using UnityEngine;
 public class SessionInstaller : MonoBehaviour
 {
     [SerializeField]
-    private NetworkManager networkManager;
-
-    [SerializeField]
     private ConnectionUI connectionUI;
 
     [SerializeField] private LobbyState lobbyState;
@@ -15,10 +12,13 @@ public class SessionInstaller : MonoBehaviour
 
     [SerializeField] private GameSessionController gameSession;
 
+    private NetworkManager networkManager;
     private ConnectionApprovalService _approvalService;
 
     private void Awake()
     {
+        networkManager = NetworkManager.Singleton;
+
         UnityTransport transport =
             networkManager.GetComponent<UnityTransport>();
 
