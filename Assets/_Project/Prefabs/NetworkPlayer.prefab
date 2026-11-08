@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: 5033492193651891805}
   - component: {fileID: 609625702111632768}
   - component: {fileID: 1492672200918359781}
+  - component: {fileID: -236989324413545786}
   m_Layer: 0
   m_Name: NetworkPlayer
   m_TagString: Untagged
@@ -350,3 +351,17 @@ MonoBehaviour:
   playerCamera: {fileID: 6914487556460470477}
   mouseSensitivity: 0.12
   playerRenderer: {fileID: 8788648441097700083}
+--- !u!114 &-236989324413545786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3623565552517012665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca731ca8511465c4aa8a075a16271d06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerBallSpawner
+  ShowTopMostFoldoutHeaderGroup: 1
+  ballPrefab: {fileID: 2307961925266914008, guid: 78d3cceab9c1e7a4a8754b0964b8f29c, type: 3}

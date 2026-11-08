@@ -24,6 +24,8 @@ public class PlayerMovement : NetworkBehaviour
 
     private bool _gameplayActive = false;
 
+    public bool IsGameplayActive => _gameplayActive;
+
     private void Awake()
     {
         _controller = GetComponent<CharacterController>();

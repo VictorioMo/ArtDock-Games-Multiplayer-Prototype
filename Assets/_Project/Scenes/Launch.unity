@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98d9db9626104da59357651088226725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Multiplayer.Tools.NetworkSimulator.Runtime::Unity.Multiplayer.Tools.NetworkSimulator.Runtime.NetworkSimulator
-  m_PresetAsset: {fileID: 11400000, guid: 0cd4a80cfc4c2634d934dfde16689397, type: 2}
+  m_PresetAsset: {fileID: 11400000, guid: b55f861029a655548857f424c0977887, type: 2}
   m_PresetReference:
     rid: -2
   m_Scenario:
