@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2307961925266914008}
   - component: {fileID: 6701964809376284318}
   - component: {fileID: 5523714541571584427}
+  - component: {fileID: -6673734747866710248}
   m_Layer: 0
   m_Name: NetworkBall
   m_TagString: Untagged
@@ -155,14 +156,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 4238271946
+  GlobalObjectIdHash: 3746243340
   InScenePlacedSourceGlobalObjectIdHash: 3746243340
   m_InScenePlacedDisabledByDefault: 0
   DeferredDespawnTick: 0
   Ownership: 1
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
-  m_InScenePlaced: 1
+  m_InScenePlaced: 0
   ActiveSceneSynchronization: 0
   SceneMigrationSynchronization: 0
   SpawnWithObservers: 1
@@ -233,3 +234,16 @@ MonoBehaviour:
   UseRigidBodyForMotion: 0
   AutoUpdateKinematicState: 1
   AutoSetKinematicOnDespawn: 1
+--- !u!114 &-6673734747866710248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2737864605420729314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 335404a9f28e8fc46818ae35db6d06d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NetworkBall
+  ShowTopMostFoldoutHeaderGroup: 1
